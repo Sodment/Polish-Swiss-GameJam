@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class BuildTile : MonoBehaviour
+public class SelectedTile : MonoBehaviour
 {
     private Grid grid;
     [SerializeField] private Tilemap highlightTilemap = null;
@@ -24,7 +24,7 @@ public class BuildTile : MonoBehaviour
             previousMousePos = mousePos;
         }
 
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             SelectedPosition = mousePos;
             Debug.Log("Selected Pos:" + SelectedPosition.ToString());
