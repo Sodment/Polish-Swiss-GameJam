@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/Graphics/Thrashes/4BITtrans.png.meta
-guid: 395787410d01731488eb5a4a7d41b6e1
-=======
-guid: 229f160d3319a4e4b8f433231d8610ee
->>>>>>> 8207e375ffd6923d25f71d9b6a96ab4a455480d4:Assets/Graphics/4BIT.png.meta
+guid: dbcb17a907e340f4ea85c6994002a77b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
