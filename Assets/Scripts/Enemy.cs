@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
 
     [Space]
     [SerializeField] private float _health;
+    public EnemyType Type => _type;
 
     public bool AddDamage(float damage)
     {
@@ -22,5 +23,9 @@ public class Enemy : MonoBehaviour
 
         return newHealth <= 0;
 
+    }
+    public float givemedist()
+    {
+        return 1f;
     }
 }

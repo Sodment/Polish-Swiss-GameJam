@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,7 +32,26 @@ public class TurretEatTrash : MonoBehaviour
     }
     private List<Enemy> GetEnemiesInRange(float range)
     {
-        return null;
+        List<Enemy> result = new List<Enemy>();
+        List<Enemy> allEnemiesAlive = Spawner.getAllLivingEnemies();
+        foreach (Enemy candidate in allEnemiesAlive)
+        {
+            if(CanAttack(candidate) && InRange(candidate))
+            {
+                result.Add(candidate);
+            }
+        }
+        return result;
+    }
+    private bool CanAttack(Enemy enemy)
+    {
+        var enemyMask = enemy.Type;
+        var towerMask = tower.GetStats().AffectedEnemies;
+        return (enemyMask & towerMask) > 0;
+    }
+    private bool InRange(Enemy enemy)
+    {
+        return Vector2.Distance(enemy.transform.position, transform.position) < tower.GetStats().AttackRange;
     }
     private Enemy ChooseEnemyToAttack(List<Enemy> enemies)
     {
