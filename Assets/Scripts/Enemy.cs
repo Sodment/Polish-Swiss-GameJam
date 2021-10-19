@@ -10,6 +10,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private EnemyType _type;
     [SerializeField] private float _value = 5;
 
+    
+
     [Space]
     [SerializeField] private float _health;
 
@@ -19,5 +21,6 @@ public class Enemy : MonoBehaviour
         _health = newHealth;
 
         return newHealth <= 0;
+
     }
 }
