@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class BuildTile : MonoBehaviour
+public class SelectedTile : MonoBehaviour
 {
     private Grid grid;
-    [SerializeField] private Tilemap HighlightTilemap = null;
-    [SerializeField] private Tile hoverTile = null;
+    [SerializeField] private Tilemap highlightTilemap = null;
+    [SerializeField] private Tile highlightTile = null;
     public Vector3Int SelectedPosition;
     private Vector3Int previousMousePos = new Vector3Int();
     // Start is called before the first frame update
@@ -19,22 +19,16 @@ public class BuildTile : MonoBehaviour
         Vector3Int mousePos = GetMousePosition();
         if (!mousePos.Equals(previousMousePos))
         {
-            HighlightTilemap.SetTile(previousMousePos, null);
-            HighlightTower(mousePos, hoverTile);
+            highlightTilemap.SetTile(previousMousePos, null);
+            highlightTilemap.SetTile(mousePos, highlightTile);
             previousMousePos = mousePos;
         }
 
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             SelectedPosition = mousePos;
             Debug.Log("Selected Pos:" + SelectedPosition.ToString());
         }
-    }
-
-
-    void HighlightTower(Vector3Int tilePos, Tile highlightTile)
-    {
-        HighlightTilemap.SetTile(tilePos, highlightTile);
     }
 
     Vector3Int GetMousePosition()

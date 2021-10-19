@@ -417,8 +417,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8be8351811be7443b8f5c5adc5471517, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HighlightTilemap: {fileID: 2134782417}
-  hoverTile: {fileID: 11400000, guid: 3a1d3003667ae418f97c70aacb69da96, type: 2}
+  highlightTilemap: {fileID: 2134782417}
+  highlightTile: {fileID: 0}
   SelectedPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1737780203
 GameObject:
