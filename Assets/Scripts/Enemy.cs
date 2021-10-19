@@ -9,4 +9,15 @@ public class Enemy : MonoBehaviour
     [Space]
     [SerializeField] private EnemyType _type;
     [SerializeField] private float _value = 5;
+
+    [Space]
+    [SerializeField] private float _health;
+
+    public bool AddDamage(float damage)
+    {
+        var newHealth = _health - damage;
+        _health = newHealth;
+
+        return newHealth <= 0;
+    }
 }
