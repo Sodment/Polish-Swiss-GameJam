@@ -49,6 +49,6 @@ public class TurretEatTrash : MonoBehaviour
     }
     private void Attack(Enemy enemy)
     {
-        enemy.DealDamage(tower.GetStats().AttackDamage);
+        enemy.AddDamage(tower.GetStats().AttackDamage);
     }
 }

@@ -9,12 +9,18 @@ public class Enemy : MonoBehaviour
     [Space]
     [SerializeField] private EnemyType _type;
     [SerializeField] private float _value = 5;
-    public void DealDamage(float damage)
+
+    
+
+    [Space]
+    [SerializeField] private float _health;
+
+    public bool AddDamage(float damage)
     {
-        Debug.Log("I got hit for " + damage + " damage");
-    }
-    public float givemedist()
-    {
-        return 1f;
+        var newHealth = _health - damage;
+        _health = newHealth;
+
+        return newHealth <= 0;
+
     }
 }
