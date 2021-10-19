@@ -45,4 +45,8 @@ public class TrashMovement : MonoBehaviour
             }
         }
     }
+    public void stopMovement()
+    {
+        isMoving = false;
+    }
 }
