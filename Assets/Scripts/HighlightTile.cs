@@ -7,7 +7,7 @@ public class HighlightTile : MonoBehaviour
     [SerializeField] private Tilemap highlightTilemap = null;
     [SerializeField] private Tile highlightTile = null;
     private Vector3Int previousMousePos = new Vector3Int();
-    private bool showHighlighter = true;
+    public bool showHighligther;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,17 +17,16 @@ public class HighlightTile : MonoBehaviour
     private void Update()
     {
         Vector3Int mousePos = GetMousePosition();
-        if (!mousePos.Equals(previousMousePos) && showHighlighter)
+        if (!mousePos.Equals(previousMousePos) && showHighligther)
         {
             highlightTilemap.SetTile(previousMousePos, null);
             highlightTilemap.SetTile(mousePos, highlightTile);
             previousMousePos = mousePos;
         }
 
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log(showHighlighter.ToString());
-            showHighlighter = !showHighlighter;
+            showHighligther = !showHighligther;
         }
     }
 
