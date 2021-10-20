@@ -487,8 +487,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
-  m_Color: {r: 0.8962264, g: 0.7588188, b: 0.33538026, a: 1}
+  m_Sprite: {fileID: 21300000, guid: f2fb1672bce48d94f806c3792c698d58, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -695,8 +695,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3625043607559282579, guid: 0d267bc78a0864eb48358689b29ed20a, type: 3}
-  m_Color: {r: 0.08861388, g: 0.40633714, b: 0.9716981, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 07b7cb9d083fdeb4fbff38e5ba996721, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -715,7 +715,7 @@ Transform:
   m_GameObject: {fileID: 901332200}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.38, y: -1.06, z: 0}
-  m_LocalScale: {x: 1.9138076, y: 2.911657, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -734,7 +734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: 
   _defaultTowerStats:
-    AffectedEnemies: -1
+    AffectedEnemies: 2
     AttackRange: 5
     AttackFrequency: 0.2
     AttackDamage: 1
