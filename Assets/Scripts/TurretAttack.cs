@@ -34,8 +34,9 @@ public class TurretAttack : MonoBehaviour
     private List<Enemy> GetEnemiesInRange(float range)
     {
         List<Enemy> result = new List<Enemy>();
-        List<Enemy> allEnemiesAlive = spawner.AliveEnemies;
-        
+        //List<Enemy> allEnemiesAlive = spawner.AliveEnemies;
+        List<Enemy> allEnemiesAlive = new List<Enemy>();
+        allEnemiesAlive.Add(GameObject.Find("PlasticTrash").GetComponent<Enemy>());
         foreach (Enemy candidate in allEnemiesAlive)
         {
             
@@ -73,10 +74,10 @@ public class TurretAttack : MonoBehaviour
     }
     private void Attack(Enemy enemy)
     {
-        GameObject bulletGO = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-        Bullet bullet = bulletGO.GetComponent<Bullet>();
         Debug.Log("attacking");
-        bullet.StartAttack(enemy, tower.GetStats().AttackDamage);
+        GameObject bulletGO = Instantiate(bulletPrefab, enemy.transform.position, Quaternion.identity);
+        Bullet bullet = bulletGO.GetComponent<Bullet>();
+        bullet.StartAttack(enemy, tower, tower.GetStats().AttackDamage);
         lastAttackTime = Time.time;
     }
 }

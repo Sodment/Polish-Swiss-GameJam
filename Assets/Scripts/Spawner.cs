@@ -34,7 +34,7 @@ public class Spawner : MonoBehaviour
         HandleWaves();
     }
 
-    private void CheckEnemiesHealth()
+    private void CheckEnemiesHealth() 
     {
         var deadEnemies = new List<Enemy>();
 
@@ -51,13 +51,16 @@ public class Spawner : MonoBehaviour
     private void HandleWaves()
     {
         if (_isWaveActive && AliveEnemies.Count == 0)
+        {
             _isWaveActive = false;
+            _waveTimer = _waveInterval;
+        }
 
         if (!_isWaveActive)
         {
             _waveTimer -= Time.deltaTime;
             if (_waveTimer <= 0)
-                StartWave(Generate(_waveNumber * _baseWaveValue));
+                StartWave(Generate((_waveNumber + 1) * _baseWaveValue));
         }
     }
 
@@ -99,7 +102,7 @@ public class Spawner : MonoBehaviour
 
     public List<Enemy> RandomizeList(List<Enemy> list)
     {
-        Enemy[] randomizedArray = new Enemy[list.Count];
+        List<Enemy> randomizedList = new List<Enemy>();
 
         List<int> freeIndices = Enumerable.Range(0, list.Count).ToList();
 
@@ -108,11 +111,11 @@ public class Spawner : MonoBehaviour
             int indicesIndex = Random.Range(0, freeIndices.Count);
             int newIndex = freeIndices[indicesIndex];
 
-            randomizedArray[newIndex] = list[newIndex];
+            randomizedList.Add(list[newIndex]);
             freeIndices.RemoveAt(indicesIndex);
         }
 
-        return randomizedArray.ToList();
+        return randomizedList.ToList();
     }
 
     public void StartWave(List<Enemy> enemies)
