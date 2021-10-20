@@ -7,7 +7,7 @@ public class TurretAttack : MonoBehaviour
 {
     public Tower tower;
     public GameObject bulletPrefab;
-
+    public Spawner spawner;
     private float lastAttackTime = 0f;
     private void OnDrawGizmosSelected()
     {
@@ -34,9 +34,8 @@ public class TurretAttack : MonoBehaviour
     private List<Enemy> GetEnemiesInRange(float range)
     {
         List<Enemy> result = new List<Enemy>();
-        /*List<Enemy> allEnemiesAlive = Spawner.getAllLivingEnemies();*/
-        List<Enemy> allEnemiesAlive = new List<Enemy>();
-        allEnemiesAlive.Add(GameObject.Find("PlasticTrash").GetComponent<Enemy>());
+        List<Enemy> allEnemiesAlive = spawner.AliveEnemies;
+        
         foreach (Enemy candidate in allEnemiesAlive)
         {
             
