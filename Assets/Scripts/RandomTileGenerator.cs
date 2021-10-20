@@ -12,9 +12,9 @@ public class RandomTileGenerator : MonoBehaviour
     void Start()
     {
         grid = gameObject.GetComponent<Grid>();
-        for(int i=-10; i<10;i++)
+        for(int i=-20; i <= 20;i++)
         {
-            for(int j=-6; j<6; j++)
+            for(int j=-15; j <= 15; j++)
             {
                 Vector3Int pos = new Vector3Int(i,j,0);
                 int r = Random.Range(0, grass_pieces.Count-1);

@@ -41,7 +41,10 @@ public class Spawner : MonoBehaviour
         foreach (var enemy in AliveEnemies)
         {
             if (enemy.IsDead)
+            {
+                GameManager.Instance.money += enemy.Value;
                 deadEnemies.Add(enemy);
+            }
         }
 
         foreach (var deadEnemy in deadEnemies)
