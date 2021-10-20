@@ -8,6 +8,11 @@ public class BuildTowers : MonoBehaviour
     [SerializeField] private GameObject Buttons;
     public List<GameObject> towers;
 
+    private void Start()
+    {
+        takenTiles = FindObjectOfType<PathGenerator>().Path;
+    }
+
 
     private void Update()
     {
@@ -28,6 +33,7 @@ public class BuildTowers : MonoBehaviour
 
     public void BuildTower(int index)
     {
+
         Vector3Int selected = selectedTile.GetSelectedTile();
         Debug.Log(selected.ToString());
         if(takenTiles.Contains(selected))
