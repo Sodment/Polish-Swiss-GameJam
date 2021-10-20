@@ -74,9 +74,9 @@ public class TurretAttack : MonoBehaviour
     }
     private void Attack(Enemy enemy)
     {
-        GameObject bulletGO = Instantiate(bulletPrefab, enemy.transform.position, Quaternion.identity);
+        GameObject bulletGO = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
-        bullet.StartAttack(enemy, tower, tower.GetStats().AttackDamage);
+        bullet.StartAttack(enemy, tower.GetStats().AttackDamage);
         lastAttackTime = Time.time;
     }
 }

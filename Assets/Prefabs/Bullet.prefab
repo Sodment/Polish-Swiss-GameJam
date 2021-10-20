@@ -71,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
   m_Color: {r: 0.7815623, g: 0, b: 1, a: 1}
   m_FlipX: 0
@@ -95,5 +95,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d921dcebc080b648a306a3f550e77ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  plasticParticle: {fileID: 7693180118018630572, guid: 035683f4175a3c4489c73a7a1ce8075e, type: 3}
+  glassParticle: {fileID: 7693180118018630572, guid: 45a058ab0062295449b8c053edb412b1, type: 3}
+  bioParticle: {fileID: 7693180118018630572, guid: 84c91ca6a82810c4e8cb8d0267dbd270, type: 3}
+  paperParticle: {fileID: 7693180118018630572, guid: 71c088846e7741140a2a06813eaad810, type: 3}
   speed: 10
   hitRange: 0.5
