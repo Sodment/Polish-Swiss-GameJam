@@ -3,9 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurretEatTrash : MonoBehaviour
+public class TurretAttack : MonoBehaviour
 {
     public Tower tower;
+    public GameObject bulletPrefab;
 
     private float lastAttackTime = 0f;
     private void OnDrawGizmosSelected()
@@ -33,12 +34,16 @@ public class TurretEatTrash : MonoBehaviour
     private List<Enemy> GetEnemiesInRange(float range)
     {
         List<Enemy> result = new List<Enemy>();
-        List<Enemy> allEnemiesAlive = Spawner.getAllLivingEnemies();
+        /*List<Enemy> allEnemiesAlive = Spawner.getAllLivingEnemies();*/
+        List<Enemy> allEnemiesAlive = new List<Enemy>();
+        allEnemiesAlive.Add(GameObject.Find("PlasticTrash").GetComponent<Enemy>());
         foreach (Enemy candidate in allEnemiesAlive)
         {
-            if(CanAttack(candidate) && InRange(candidate))
+            
+            if (CanAttack(candidate) && InRange(candidate))
             {
                 result.Add(candidate);
+                
             }
         }
         return result;
@@ -69,6 +74,10 @@ public class TurretEatTrash : MonoBehaviour
     }
     private void Attack(Enemy enemy)
     {
-        enemy.AddDamage(tower.GetStats().AttackDamage);
+        GameObject bulletGO = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        Bullet bullet = bulletGO.GetComponent<Bullet>();
+        Debug.Log("attacking");
+        bullet.StartAttack(enemy, tower.GetStats().AttackDamage);
+        lastAttackTime = Time.time;
     }
 }
