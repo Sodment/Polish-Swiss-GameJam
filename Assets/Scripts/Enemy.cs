@@ -25,12 +25,12 @@ public class Enemy : MonoBehaviour
     {
         var newHealth = Mathf.Max(0f, _health - damage);
         _health = newHealth;
-
+        if(_health == 0f)
+        {
+            Destroy(gameObject);
+        }
         return newHealth <= 0f;
     }
 
-    public float givemedist()
-    {
-        return 1f;
-    }
+    
 }

@@ -6,6 +6,13 @@ public class TrashDealDamage : MonoBehaviour
 {
     public Transform DefendingZone;
     [SerializeField] private float DefendingRange = 0.5f;
+    private void Start()
+    {
+        if(DefendingZone == null)
+        {
+            DefendingZone = GameObject.FindGameObjectWithTag("DefendingZone").transform;
+        }
+    }
     void Update()
     {
         CheckIfInDefendingZone();

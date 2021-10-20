@@ -34,9 +34,9 @@ public class TurretAttack : MonoBehaviour
     private List<Enemy> GetEnemiesInRange(float range)
     {
         List<Enemy> result = new List<Enemy>();
-        //List<Enemy> allEnemiesAlive = spawner.AliveEnemies;
-        List<Enemy> allEnemiesAlive = new List<Enemy>();
-        allEnemiesAlive.Add(GameObject.Find("PlasticTrash").GetComponent<Enemy>());
+        List<Enemy> allEnemiesAlive = spawner.AliveEnemies;
+        //List<Enemy> allEnemiesAlive = new List<Enemy>();
+        //allEnemiesAlive.Add(GameObject.Find("PlasticTrash").GetComponent<Enemy>());
         foreach (Enemy candidate in allEnemiesAlive)
         {
             
@@ -61,20 +61,19 @@ public class TurretAttack : MonoBehaviour
     private Enemy ChooseEnemyToAttack(List<Enemy> enemies)
     {
         Enemy bestCandidate = enemies[0];
-        float bestCandidateDist = bestCandidate.givemedist();
+        float bestCandidateDist = Vector2.Distance( bestCandidate.transform.position, transform.position);
         foreach(Enemy candidate in enemies)
         {
-            if(bestCandidateDist < candidate.givemedist())
+            if(bestCandidateDist < Vector2.Distance(bestCandidate.transform.position, transform.position))
             {
                 bestCandidate = candidate;
-                bestCandidateDist = candidate.givemedist();
+                bestCandidateDist = Vector2.Distance(bestCandidate.transform.position, transform.position);
             }
         }
         return bestCandidate;
     }
     private void Attack(Enemy enemy)
     {
-        Debug.Log("attacking");
         GameObject bulletGO = Instantiate(bulletPrefab, enemy.transform.position, Quaternion.identity);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
         bullet.StartAttack(enemy, tower, tower.GetStats().AttackDamage);
