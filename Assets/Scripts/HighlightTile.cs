@@ -17,7 +17,7 @@ public class HighlightTile : MonoBehaviour
     private void Update()
     {
         Vector3Int mousePos = GetMousePosition();
-        if (!mousePos.Equals(previousMousePos) && showHighligther)
+        if (!mousePos.Equals(previousMousePos) && !showHighligther)
         {
             highlightTilemap.SetTile(previousMousePos, null);
             highlightTilemap.SetTile(mousePos, highlightTile);

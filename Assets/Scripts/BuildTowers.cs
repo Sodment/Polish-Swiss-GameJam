@@ -16,7 +16,7 @@ public class BuildTowers : MonoBehaviour
         }
         else
         {
-            Instantiate(tower, selected, Quaternion.identity);
+            Instantiate(tower, new Vector3(selected.x+0.5f, selected.y+0.5f, 0), Quaternion.identity);
             takenTiles.Add(selected);
         }
     }
