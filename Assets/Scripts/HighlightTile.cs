@@ -34,6 +34,7 @@ public class HighlightTile : MonoBehaviour
     Vector3Int GetMousePosition()
     {
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mouseWorldPos.z = 0;
         return grid.WorldToCell(mouseWorldPos);
     }
 }
