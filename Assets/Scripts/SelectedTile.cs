@@ -4,6 +4,7 @@ public class SelectedTile : MonoBehaviour
 {
     private Grid grid;
     private Vector3Int SelectedPosition;
+    private bool isSelected = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,17 +14,21 @@ public class SelectedTile : MonoBehaviour
     private void Update()
     {
         Vector3Int mousePosistion = GetMousePosition();
-
         if (Input.GetMouseButtonDown(0))
         {
-            SelectedPosition = mousePosistion;
-            Debug.Log("Selected Pos:" + SelectedPosition.ToString());
+            isSelected = !isSelected;
+            if(isSelected)
+            {
+                SelectedPosition = mousePosistion;
+                Debug.Log("Selected Pos:" + SelectedPosition.ToString() + isSelected.ToString());
+            }
         }
     }
 
     Vector3Int GetMousePosition()
     {
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mouseWorldPos.z = 0.25f;
         return grid.WorldToCell(mouseWorldPos);
     }
 
