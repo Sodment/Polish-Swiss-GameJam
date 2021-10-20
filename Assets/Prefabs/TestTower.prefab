@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 836712513189288247}
   - component: {fileID: 5973035080718785938}
+  - component: {fileID: 286487238946657262}
   m_Layer: 0
   m_Name: TestTower
   m_TagString: Untagged
@@ -46,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Test Tower
   _defaultTowerStats:
-    AffectedEnemies: 1
+    AffectedEnemies: -1
     AttackRange: 3
     AttackFrequency: 0.5
     AttackDamage: 0.5
@@ -59,6 +60,21 @@ MonoBehaviour:
     AttackRange: 4
     AttackFrequency: 0.25
     AttackDamage: 0.5
+--- !u!114 &286487238946657262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3855945480528948127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa703178fb88ba84b92d5443bf2cf6c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tower: {fileID: 5973035080718785938}
+  bulletPrefab: {fileID: 4608538159272521160, guid: 09f7c963e94edd04a986edc7492112a2, type: 3}
+  spawner: {fileID: 0}
 --- !u!1 &8143719226796958106
 GameObject:
   m_ObjectHideFlags: 0
