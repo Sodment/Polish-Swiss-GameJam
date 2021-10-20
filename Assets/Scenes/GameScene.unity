@@ -718,7 +718,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1037,7 +1037,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1179,6 +1179,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: BuildTowers, Assembly-CSharp
         m_MethodName: BuildTower
         m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2138175129}
+        m_TargetAssemblyTypeName: BuildTowers, Assembly-CSharp
+        m_MethodName: HideButtons
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1407,7 +1419,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1099781745}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2138175129}
+        m_TargetAssemblyTypeName: BuildTowers, Assembly-CSharp
+        m_MethodName: BuildTower
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2138175129}
+        m_TargetAssemblyTypeName: BuildTowers, Assembly-CSharp
+        m_MethodName: HideButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1099781745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1823,7 +1859,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5637,7 +5673,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5953,7 +5989,13 @@ MonoBehaviour:
   selectedTile: {fileID: 564305049}
   Buttons: {fileID: 2105515186}
   towers:
+  - {fileID: 3855945480528948127, guid: ccc7b6553228c4bd78a4d30f258afbeb, type: 3}
+  - {fileID: 3855945480528948127, guid: 070ff0dc0c59249c7bbe283c36faa33c, type: 3}
+  - {fileID: 3855945480528948127, guid: 6b243fbe1bb97479399869f5fd218a71, type: 3}
+  - {fileID: 3855945480528948127, guid: e408028c6969c431798b141f1a40d902, type: 3}
+  - {fileID: 3855945480528948127, guid: 9a714ff5f5fec48ae9b02b3b7eead0f3, type: 3}
   - {fileID: 3855945480528948127, guid: e03a0e31b22ff0348b805bfaf2c409f6, type: 3}
+  - {fileID: 3855945480528948127, guid: deafe16daca154605abb9820a51bb0b4, type: 3}
 --- !u!4 &2138175130
 Transform:
   m_ObjectHideFlags: 0
