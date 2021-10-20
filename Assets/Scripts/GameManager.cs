@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Spawner _spawner;
 
     public static GameManager Instance { get; private set; }
-    public static int money;
+    public int money;
 
     public Spawner Spawner => _spawner;
 
