@@ -24,7 +24,7 @@ public class TurretAttack : MonoBehaviour
         if(lastAttackTime + stats.AttackFrequency < Time.time)
         {
             List<Enemy> enemiesInRange = GetEnemiesInRange(stats.AttackRange);
-            if(enemiesInRange?.Count > 0)
+            if(enemiesInRange.Count > 0)
             {
                 Enemy enemyToAttack = ChooseEnemyToAttack(enemiesInRange);
                 Attack(enemyToAttack);
@@ -56,6 +56,7 @@ public class TurretAttack : MonoBehaviour
     }
     private bool InRange(Enemy enemy)
     {
+        if (enemy == null) return false;
         return Vector2.Distance(enemy.transform.position, transform.position) < tower.GetStats().AttackRange;
     }
     private Enemy ChooseEnemyToAttack(List<Enemy> enemies)
@@ -76,7 +77,7 @@ public class TurretAttack : MonoBehaviour
     {
         GameObject bulletGO = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
-        bullet.StartAttack(enemy, tower.GetStats().AttackDamage);
+        bullet.StartAttack(enemy, tower, tower.GetStats().AttackDamage);
         lastAttackTime = Time.time;
     }
 }

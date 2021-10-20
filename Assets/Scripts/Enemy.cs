@@ -21,13 +21,13 @@ public class Enemy : MonoBehaviour
 
     public bool IsDead => _health <= 0f;
 
-    public bool AddDamage(float damage)
+    public bool AddDamage(float damage, Tower source)
     {
         var newHealth = Mathf.Max(0f, _health - damage);
         _health = newHealth;
         if(_health == 0f)
         {
-            Destroy(gameObject);
+            gameObject.GetComponent<TrashMovement>().stopMovement();
         }
         return newHealth <= 0f;
     }

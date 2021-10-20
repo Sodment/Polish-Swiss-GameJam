@@ -12,7 +12,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float speed = 1f;
     [SerializeField] private float hitRange = 0.5f;
     private IEnumerator coroutine;
-    private IEnumerator Attack(Enemy enemy, float damage)
+    private IEnumerator Attack(Enemy enemy, Tower tower, float damage)
     {
         
         while (Vector2.Distance(transform.position, enemy.transform.position) > hitRange)
@@ -22,14 +22,14 @@ public class Bullet : MonoBehaviour
             transform.position += new Vector3(newPosition.x, newPosition.y, 0f);
             yield return null;
         }
-        enemy.AddDamage(damage);
+        enemy.AddDamage(damage, tower);
         hitParticle(enemy);
         Destroy(gameObject);
         yield return null;
     }
-    public void StartAttack(Enemy enemy, float damage)
+    public void StartAttack(Enemy enemy,Tower tower, float damage)
     {
-        coroutine = Attack(enemy, damage);
+        coroutine = Attack(enemy, tower, damage);
         StartCoroutine(coroutine);
     }
     private void hitParticle(Enemy enemy)
