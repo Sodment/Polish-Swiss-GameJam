@@ -7,8 +7,15 @@ public class TurretAttack : MonoBehaviour
 {
     public Tower tower;
     public GameObject bulletPrefab;
-    public Spawner spawner;
+    [SerializeField] private Spawner spawner;
     private float lastAttackTime = 0f;
+
+    private void Start()
+    {
+        spawner = GameManager.Instance.GetComponent<Spawner>();
+    }
+
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;
