@@ -11,6 +11,7 @@ public class TrashMovement : MonoBehaviour
     private int nextPointIndex = 0;
     private void Start()
     {
+		getPath();
         beginMovement();
     }
     private void Update()
@@ -49,4 +50,14 @@ public class TrashMovement : MonoBehaviour
     {
         isMoving = false;
     }
+	private void getPath()
+	{
+		PathGenerator pathGenerator = FindObjectOfType<PathGenerator>();
+		path = new List<Vector2>();
+		foreach(Vector3Int vec in pathGenerator.Path)
+		{
+			path.Add(new Vector2(vec.x + 0.5f, vec.y + 0.5f));
+		}
+	}
+
 }
