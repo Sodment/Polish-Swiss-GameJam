@@ -6,6 +6,7 @@ public class Tower : MonoBehaviour
 {
     [Header("General")]
     [SerializeField] private string _name;
+    public float costOfBuilding;
 
     [Header("Attack")]
     [SerializeField] private TowerAttackInfo _defaultTowerStats;

@@ -251,6 +251,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5961349196560614566, guid: a2e5144a1549d4ccb8bcb519d618e11d, type: 3}
+      propertyPath: money
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5961349196560614566, guid: a2e5144a1549d4ccb8bcb519d618e11d, type: 3}
       propertyPath: baseHitPoints
       value: 3
       objectReference: {fileID: 0}
@@ -1107,6 +1111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bc4851ae1f4595418111ded567badce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  notificater: {fileID: 0}
   deadBase: {fileID: 21300000, guid: 4963ce0376d13d942999aa9286956efe, type: 3}
   rotationSpeed: 0.5
 --- !u!4 &527085892

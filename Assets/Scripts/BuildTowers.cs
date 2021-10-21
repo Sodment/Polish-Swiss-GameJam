@@ -40,10 +40,11 @@ public class BuildTowers : MonoBehaviour
         {
             Debug.Log("Its TAKEN");
         }
-        else
+        else if(GameManager.Instance.money >= towers[index].GetComponent<Tower>().costOfBuilding)
         {
             Instantiate(towers[index], new Vector3(selected.x+0.5f, selected.y+0.5f, 0), Quaternion.identity);
             takenTiles.Add(selected);
+            GameManager.Instance.money -= towers[index].GetComponent<Tower>().costOfBuilding;
         }
     }
 }
