@@ -49,6 +49,7 @@ public class BuildTowers : MonoBehaviour
         else
         {
             Debug.Log("Bieda");
+            FindObjectOfType<Notificater>().MakeNotificationNotEnoughMoney(Input.mousePosition);
         }
     }
 }

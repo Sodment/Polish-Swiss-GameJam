@@ -49,3 +49,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NotificationPrefabMoney: {fileID: 2928091764621669713, guid: 2a768379fc564634a8c36b5006f8f973, type: 3}
+  NotificationPrefabNotEnoughMoney: {fileID: 0}
