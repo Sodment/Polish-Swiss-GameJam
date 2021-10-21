@@ -2789,7 +2789,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 703703898179769320, guid: 937161e9489a0443c991a7d989e23230, type: 3}
       propertyPath: m_Name
-      value: Road (1)
+      value: Road
       objectReference: {fileID: 0}
     - target: {fileID: 703703898179769321, guid: 937161e9489a0443c991a7d989e23230, type: 3}
       propertyPath: m_RootOrder
@@ -2835,6 +2835,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 703703898179769323, guid: 937161e9489a0443c991a7d989e23230, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[3].m_Data
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 703703898179769323, guid: 937161e9489a0443c991a7d989e23230, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[4].m_Data
+      value: 
+      objectReference: {fileID: 21300000, guid: 60c16cfdd0e886f43b1433ad963a3bc3, type: 3}
+    - target: {fileID: 703703898179769323, guid: 937161e9489a0443c991a7d989e23230, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[3].m_RefCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 703703898179769323, guid: 937161e9489a0443c991a7d989e23230, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[4].m_RefCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 703703898179769323, guid: 937161e9489a0443c991a7d989e23230, type: 3}
+      propertyPath: m_Tiles.Array.data[35].second.m_TileSpriteIndex
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 937161e9489a0443c991a7d989e23230, type: 3}
 --- !u!4 &1636672736 stripped
@@ -2859,9 +2879,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bafb25a75d397094da1e25f7c2abdade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RoadTilemap: {fileID: 0}
+  RoadTilemap: {fileID: 1636672740}
   StartingTile: {x: -10, y: 0, z: 0}
   Path: []
+--- !u!1839735485 &1636672740 stripped
+Tilemap:
+  m_CorrespondingSourceObject: {fileID: 703703898179769323, guid: 937161e9489a0443c991a7d989e23230, type: 3}
+  m_PrefabInstance: {fileID: 1636672735}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1655547064
 GameObject:
   m_ObjectHideFlags: 0
