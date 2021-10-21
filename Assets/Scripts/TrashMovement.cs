@@ -7,6 +7,8 @@ public class TrashMovement : MonoBehaviour
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private List<Vector2> path;
     [SerializeField] private float swapingPointDistance = 0.2f;
+    [SerializeField] private float threshold = 0.1f;
+    [SerializeField] private float deathSpeed = 3f;
     private bool isMoving = false;
     private int nextPointIndex = 0;
     private void Start()
@@ -59,5 +61,23 @@ public class TrashMovement : MonoBehaviour
 			path.Add(new Vector2(vec.x + 0.5f, vec.y + 0.5f));
 		}
 	}
-
+    public void lastMovement(Transform destination)
+    {
+        if(isMoving)
+        {
+            Debug.LogWarning("trash is still alive");
+            stopMovement();
+        }
+        StartCoroutine(lastMove(destination));
+    }
+    private IEnumerator lastMove(Transform destination)
+    {
+        while(Vector2.Distance(destination.position, transform.position) > threshold)
+        {
+            Vector3 dir = new Vector3(destination.position.x - transform.position.x, destination.position.y - transform.position.y, 0f);
+            transform.position += dir * deathSpeed * Time.deltaTime;
+            transform.localScale = new Vector3(transform.localScale.x * 0.97f, transform.localScale.y * 0.97f, transform.localScale.z * 0.97f) ;
+            yield return null;
+        }
+    }
 }

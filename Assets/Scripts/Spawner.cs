@@ -43,7 +43,6 @@ public class Spawner : MonoBehaviour
         {
             if (enemy.IsDead)
             {
-                enemy.Die();
                 deadEnemies.Add(enemy);
             }
         }

@@ -39,7 +39,7 @@ public class TrashDealDamage : MonoBehaviour
         {
             level.Defeat(DefendingZone);
         }
-        gameObject.GetComponent<Enemy>().Die();
+        //gameObject.GetComponent<Enemy>().Die();
         this.enabled = false;
     }
 }
