@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-
+    public Notificater notificater;
     public Sprite deadBase;
     [SerializeField] private float rotationSpeed = 0.5f;
     public void Defeat(GameObject baseGO)

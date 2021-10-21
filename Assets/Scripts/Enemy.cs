@@ -21,6 +21,11 @@ public class Enemy : MonoBehaviour
 
     public bool IsDead => _health <= 0f;
 
+    public LevelManager level;
+    private void Start()
+    {
+        level = FindObjectOfType<LevelManager>();
+    }
     public bool AddDamage(float damage, Tower source)
     {
         var newHealth = Mathf.Max(0f, _health - damage);
@@ -32,7 +37,7 @@ public class Enemy : MonoBehaviour
     {
         gameObject.GetComponent<TrashMovement>().stopMovement();
         GameManager.Instance.money += Value;
-        Debug.Log("Dead: " + name + " money: " + GameManager.Instance.money);
+        level.notificater.MakeNotificationMoney(transform.position, Value);
     }
     
 }
