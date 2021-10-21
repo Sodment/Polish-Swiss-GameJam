@@ -46,5 +46,9 @@ public class BuildTowers : MonoBehaviour
             takenTiles.Add(selected);
             GameManager.Instance.money -= towers[index].GetComponent<Tower>().costOfBuilding;
         }
+        else
+        {
+            Debug.Log("Bieda");
+        }
     }
 }
