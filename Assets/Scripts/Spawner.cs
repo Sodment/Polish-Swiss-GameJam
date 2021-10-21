@@ -52,6 +52,11 @@ public class Spawner : MonoBehaviour
             AliveEnemies.Remove(deadEnemy);
     }
 
+    public void StartNextWave()
+    {
+        _waveTimer = 0f;
+    }
+
     private void HandleWaves()
     {
         if (_isWaveActive && AliveEnemies.Count == 0)
