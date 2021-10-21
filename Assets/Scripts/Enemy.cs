@@ -32,16 +32,20 @@ public class Enemy : MonoBehaviour
         _health = newHealth;
         if(_health == 0)
         {
-            Die(source);
+            GetKilled(source);
         }
         return newHealth <= 0f;
     }
-    public void Die(Tower source)
+    public void GetKilled(Tower source)
+    {
+        GameManager.Instance.money += Value * source.moneyGain;
+        level.notificater.MakeNotificationMoney(transform.position, Value * source.moneyGain);
+        Die(source.transform);
+    }
+    public void Die(Transform source)
     {
         TrashMovement movement = gameObject.GetComponent<TrashMovement>();
         movement.stopMovement();
-        GameManager.Instance.money += Value * source.moneyGain;
-        level.notificater.MakeNotificationMoney(transform.position, Value*source.moneyGain);
         movement.lastMovement(source.transform);
     }
 
