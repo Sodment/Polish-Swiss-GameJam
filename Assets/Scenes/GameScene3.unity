@@ -941,7 +941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RoadTilemap: {fileID: 381735018}
-  StartingTile: {x: -9, y: 0, z: 0}
+  StartingTile: {x: -12, y: 0, z: 0}
   Path: []
 --- !u!1839735485 &381735018 stripped
 Tilemap:
