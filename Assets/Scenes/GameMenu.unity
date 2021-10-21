@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 45503785}
   - component: {fileID: 45503784}
   - component: {fileID: 45503783}
+  - component: {fileID: 45503786}
   m_Layer: 5
   m_Name: Start
   m_TagString: Untagged
@@ -184,7 +185,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.8867924, g: 0.88300604, b: 0.21333212, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -256,6 +257,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 45503781}
   m_CullTransparentMesh: 1
+--- !u!114 &45503786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45503781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 3, y: -6}
+  m_UseGraphicAlpha: 1
 --- !u!1 &343040360
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,6 +340,7 @@ GameObject:
   - component: {fileID: 719305676}
   - component: {fileID: 719305675}
   - component: {fileID: 719305674}
+  - component: {fileID: 719305677}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -445,6 +462,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 719305672}
   m_CullTransparentMesh: 1
+--- !u!114 &719305677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719305672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.3207547, g: 0.19517621, b: 0.19517621, a: 0.5}
+  m_EffectDistance: {x: 3, y: -6}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1047049699
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,6 +732,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'ScenePrefab '
       objectReference: {fileID: 0}
+    - target: {fileID: 9222379493273284058, guid: 192dc4ee80494473b924b005faf6dc8e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9222379493273284059, guid: 192dc4ee80494473b924b005faf6dc8e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 192dc4ee80494473b924b005faf6dc8e, type: 3}
@@ -859,7 +895,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.5344844
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
