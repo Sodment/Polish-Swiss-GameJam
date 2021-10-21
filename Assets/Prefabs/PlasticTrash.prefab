@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 115e547cfd20e2f4c8f4efe08a5ab18d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 3.8
   path:
   - {x: -6, y: 6}
   - {x: -6, y: 3}
@@ -121,7 +121,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DefendingZone: {fileID: 0}
   spriteRenderer: {fileID: 0}
-  deadBase: {fileID: 21300000, guid: 4963ce0376d13d942999aa9286956efe, type: 3}
   DefendingRange: 0.5
 --- !u!114 &2446718109540386340
 MonoBehaviour:
@@ -149,5 +148,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: 
   _type: 2
-  _value: 5
-  _health: 2
+  _value: 10
+  _health: 3
