@@ -7,6 +7,6 @@ public class SlowMotion : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 0.5f;
+        Time.timeScale = 0.3f;
     }
 }
