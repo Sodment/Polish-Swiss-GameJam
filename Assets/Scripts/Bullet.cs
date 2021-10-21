@@ -15,14 +15,15 @@ public class Bullet : MonoBehaviour
     private IEnumerator Attack(Enemy enemy, Tower tower, float damage)
     {
         
-        while (Vector2.Distance(transform.position, enemy.transform.position) > hitRange)
+        while (enemy.transform != null && Vector2.Distance(transform.position, enemy.transform.position) > hitRange)
         {
             Vector2 movingDirection = new Vector2(enemy.transform.position.x - transform.position.x, enemy.transform.position.y - transform.position.y).normalized;
             Vector2 newPosition = movingDirection * speed * Time.deltaTime ;
             transform.position += new Vector3(newPosition.x, newPosition.y, 0f);
             yield return null;
         }
-        enemy.AddDamage(damage, tower);
+        if(enemy!=null)
+			enemy.AddDamage(damage, tower);
         hitParticle(enemy);
         Destroy(gameObject);
         yield return null;

@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance { get; private set; }
     public float money;
+    public float baseHitPoints;
 
     public Spawner Spawner => _spawner;
 
