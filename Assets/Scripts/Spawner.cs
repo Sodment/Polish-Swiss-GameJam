@@ -21,6 +21,7 @@ public class Spawner : MonoBehaviour
 
     public List<Enemy> AliveEnemies { get; private set; } = new List<Enemy>();
 
+    public int WaveNumber => _waveNumber;
     private void Start()
     {
         _waveTimer = _firstWaveDelay;
