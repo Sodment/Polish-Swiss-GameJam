@@ -79,5 +79,6 @@ public class TrashMovement : MonoBehaviour
             transform.localScale = new Vector3(transform.localScale.x * 0.97f, transform.localScale.y * 0.97f, transform.localScale.z * 0.97f) ;
             yield return null;
         }
+        gameObject.SetActive(false);
     }
 }
