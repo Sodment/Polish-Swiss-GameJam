@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Spawner : MonoBehaviour
 {
+    public GameObject NextWave;
     [SerializeField] private Transform _spawnPosition;
     [SerializeField] private float _spawnInterval = 1f;
     [SerializeField] private float _baseWaveValue = 50;
@@ -63,6 +65,7 @@ public class Spawner : MonoBehaviour
         {
             _isWaveActive = false;
             _waveTimer = _waveInterval;
+            if(NextWave != null) NextWave.SetActive(true);
         }
 
         if (!_isWaveActive)
