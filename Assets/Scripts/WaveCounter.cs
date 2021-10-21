@@ -8,6 +8,6 @@ public class WaveCounter : MonoBehaviour
     public TMP_Text counter;
     void Update()
     {
-        counter.text = (GameManager.Instance.Spawner.WaveNumber + 1).ToString();
+        counter.text = GameManager.Instance.Spawner.WaveNumber.ToString();
     }
 }
