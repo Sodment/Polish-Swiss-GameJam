@@ -257,7 +257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5961349196560614566, guid: a2e5144a1549d4ccb8bcb519d618e11d, type: 3}
       propertyPath: money
-      value: 200
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 5961349196560614566, guid: a2e5144a1549d4ccb8bcb519d618e11d, type: 3}
       propertyPath: baseHitPoints
