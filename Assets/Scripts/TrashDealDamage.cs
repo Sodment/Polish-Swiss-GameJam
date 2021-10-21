@@ -34,12 +34,12 @@ public class TrashDealDamage : MonoBehaviour
     private void EnteredDefendingZone()
     {
         trashMovement.stopMovement();
-        GameManager.Instance.baseHitPoints -= DefendingRange;
+        GameManager.Instance.baseHitPoints = Mathf.Max(0f, GameManager.Instance.baseHitPoints - 1f);
         if(GameManager.Instance.baseHitPoints <= 0f)
         {
             level.Defeat(DefendingZone);
         }
-        //gameObject.GetComponent<Enemy>().Die();
+        //gameObject.GetComponent<Enemy>().Die(DefendingZone.transform);
         this.enabled = false;
     }
 }
