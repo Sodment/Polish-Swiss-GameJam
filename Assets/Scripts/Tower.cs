@@ -7,6 +7,8 @@ public class Tower : MonoBehaviour
     [Header("General")]
     [SerializeField] private string _name;
     public float costOfBuilding;
+    [Range(0f, 1f)]
+    public float moneyGain = 1f;
 
     [Header("Attack")]
     [SerializeField] private TowerAttackInfo _defaultTowerStats;
@@ -31,5 +33,6 @@ public class Tower : MonoBehaviour
         public float AttackRange;
         public float AttackFrequency;
         public float AttackDamage;
+
     }
 }

@@ -30,14 +30,20 @@ public class Enemy : MonoBehaviour
     {
         var newHealth = Mathf.Max(0f, _health - damage);
         _health = newHealth;
-        
+        if(_health == 0)
+        {
+            Die(source);
+        }
         return newHealth <= 0f;
     }
-    public void Die()
+    public void Die(Tower source)
     {
-        gameObject.GetComponent<TrashMovement>().stopMovement();
-        GameManager.Instance.money += Value;
-        level.notificater.MakeNotificationMoney(transform.position, Value);
+        TrashMovement movement = gameObject.GetComponent<TrashMovement>();
+        movement.stopMovement();
+        GameManager.Instance.money += Value * source.moneyGain;
+        level.notificater.MakeNotificationMoney(transform.position, Value*source.moneyGain);
+        movement.lastMovement(source.transform);
     }
+
     
 }
