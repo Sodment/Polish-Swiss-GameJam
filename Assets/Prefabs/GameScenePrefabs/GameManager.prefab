@@ -90,9 +90,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 853ea23b4d454db4b97bbc3395d7eb4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NextWave: {fileID: 0}
   _spawnPosition: {fileID: 5961349194871446901}
   _spawnInterval: 1
-  _baseWaveValue: 50
+  _baseWaveValue: 30
   _waveInterval: 10
   _firstWaveDelay: 1
   _enemyPrefabs:
