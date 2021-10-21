@@ -108,7 +108,7 @@ MonoBehaviour:
   - {x: 4.5, y: -6}
   swapingPointDistance: 0.2
   threshold: 0.1
-  deathSpeed: 3
+  deathSpeed: 2
 --- !u!114 &7182913592337825532
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -107,6 +107,8 @@ MonoBehaviour:
   - {x: 4.5, y: -1.5}
   - {x: 4.5, y: -6}
   swapingPointDistance: 0.2
+  threshold: 0.1
+  deathSpeed: 2
 --- !u!114 &2446718109540386347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,3 +152,4 @@ MonoBehaviour:
   _type: 2
   _value: 10
   _health: 3
+  level: {fileID: 0}
