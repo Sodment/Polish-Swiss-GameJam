@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class TrashDealDamage : MonoBehaviour
 {
-    public Transform DefendingZone;
+    public GameObject DefendingZone;
     private TrashMovement trashMovement;
+    private LevelManager level;
     public SpriteRenderer spriteRenderer;
-    public Sprite deadBase;
+    
     [SerializeField] private float DefendingRange = 0.5f;
     private void Start()
     {
+        level = FindObjectOfType<LevelManager>();
         trashMovement = gameObject.GetComponent<TrashMovement>();
         if (DefendingZone == null)
         {
-            DefendingZone = GameObject.FindGameObjectWithTag("DefendingZone").transform;
+            DefendingZone = GameObject.FindGameObjectWithTag("DefendingZone");
             spriteRenderer = DefendingZone.GetComponent<SpriteRenderer>();
         }
     }
@@ -24,7 +26,7 @@ public class TrashDealDamage : MonoBehaviour
     }
     private void CheckIfInDefendingZone()
     {
-        if (Vector2.Distance(transform.position, DefendingZone.position) < DefendingRange)
+        if (Vector2.Distance(transform.position, DefendingZone.transform.position) < DefendingRange)
         {
             EnteredDefendingZone();
         }
@@ -33,12 +35,11 @@ public class TrashDealDamage : MonoBehaviour
     {
         trashMovement.stopMovement();
         GameManager.Instance.baseHitPoints -= DefendingRange;
-        Debug.Log("Dealing damage to defending zone zone");
-        if(GameManager.Instance.baseHitPoints <= 0.0f)
+        if(GameManager.Instance.baseHitPoints <= 0f)
         {
-            spriteRenderer.sprite = deadBase;
+            level.Defeat(DefendingZone);
         }
         gameObject.GetComponent<Enemy>().Die();
-        Destroy(this);
+        this.enabled = false;
     }
 }
