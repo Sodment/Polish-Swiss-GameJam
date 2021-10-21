@@ -42,7 +42,7 @@ public class Spawner : MonoBehaviour
         {
             if (enemy.IsDead)
             {
-                GameManager.Instance.money += enemy.Value;
+                enemy.Die();
                 deadEnemies.Add(enemy);
             }
         }

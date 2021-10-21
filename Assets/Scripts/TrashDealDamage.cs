@@ -38,6 +38,7 @@ public class TrashDealDamage : MonoBehaviour
         {
             spriteRenderer.sprite = deadBase;
         }
-        Destroy(gameObject);
+        gameObject.GetComponent<Enemy>().Die();
+        Destroy(this);
     }
 }

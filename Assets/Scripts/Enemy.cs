@@ -25,12 +25,14 @@ public class Enemy : MonoBehaviour
     {
         var newHealth = Mathf.Max(0f, _health - damage);
         _health = newHealth;
-        if(_health == 0f)
-        {
-            gameObject.GetComponent<TrashMovement>().stopMovement();
-        }
+        
         return newHealth <= 0f;
     }
-
+    public void Die()
+    {
+        gameObject.GetComponent<TrashMovement>().stopMovement();
+        GameManager.Instance.money += Value;
+        Debug.Log("Dead: " + name + " money: " + GameManager.Instance.money);
+    }
     
 }
