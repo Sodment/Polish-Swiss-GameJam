@@ -10,7 +10,7 @@ public class LevelManager : MonoBehaviour
     public void Defeat(GameObject baseGO)
     {
         StartCoroutine(magicDeath(baseGO));
-        SceneManager.LoadScene("GameScene2");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
     }
     private IEnumerator magicDeath(GameObject baseGO)
