@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: Test Tower
+  costOfBuilding: 1
   _defaultTowerStats:
     AffectedEnemies: 4
     AttackRange: 3
