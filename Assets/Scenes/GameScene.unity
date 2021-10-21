@@ -257,7 +257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5961349196560614566, guid: a2e5144a1549d4ccb8bcb519d618e11d, type: 3}
       propertyPath: money
-      value: 2
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 5961349196560614566, guid: a2e5144a1549d4ccb8bcb519d618e11d, type: 3}
       propertyPath: baseHitPoints
@@ -873,6 +873,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5738613974044893833, guid: d9f7c75ef5549f6408f568c955ee1cff, type: 3}
+      propertyPath: NotificationPrefabNotEnoughMoney
+      value: 
+      objectReference: {fileID: 2928091764621669713, guid: ffb4e7de44eb0ed459604f44eec6185b, type: 3}
     - target: {fileID: 6286367141808584729, guid: d9f7c75ef5549f6408f568c955ee1cff, type: 3}
       propertyPath: m_Name
       value: Notificater

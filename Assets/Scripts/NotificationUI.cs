@@ -27,4 +27,20 @@ public class NotificationUI : MonoBehaviour
             yield return null;
         }
     }
+    public void startVFXNot()
+    {
+        StartCoroutine(vfxNot());
+    }
+    private IEnumerator vfxNot()
+    {
+        for (int i = 0; i < lifetime; i++)
+        {
+            Transform.position += direction.normalized * speed;
+            tmp.color = new Color(tmp.color.r, tmp.color.g, tmp.color.b, 1 - i / lifetime);
+            coin.color = new Color(coin.color.r, coin.color.g, coin.color.b, 1 - i / lifetime);
+
+            yield return null;
+        }
+    }
+
 }
