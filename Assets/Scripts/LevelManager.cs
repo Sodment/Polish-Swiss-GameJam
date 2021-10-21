@@ -1,14 +1,17 @@
 using System.Collections;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     public Notificater notificater;
     public Sprite deadBase;
     [SerializeField] private float rotationSpeed = 0.5f;
+
     public void Defeat(GameObject baseGO)
     {
         StartCoroutine(magicDeath(baseGO));
+        SceneManager.LoadScene("Level2");
+
     }
     private IEnumerator magicDeath(GameObject baseGO)
     {
