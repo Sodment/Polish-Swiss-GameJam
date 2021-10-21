@@ -22,6 +22,7 @@ public class Spawner : MonoBehaviour
     public List<Enemy> AliveEnemies { get; private set; } = new List<Enemy>();
 
     public int WaveNumber => _waveNumber;
+
     private void Start()
     {
         _waveTimer = _firstWaveDelay;
@@ -51,6 +52,11 @@ public class Spawner : MonoBehaviour
             AliveEnemies.Remove(deadEnemy);
     }
 
+    public void StartNextWave()
+    {
+        _waveTimer = 0f;
+    }
+
     private void HandleWaves()
     {
         if (_isWaveActive && AliveEnemies.Count == 0)
@@ -63,7 +69,10 @@ public class Spawner : MonoBehaviour
         {
             _waveTimer -= Time.deltaTime;
             if (_waveTimer <= 0)
+            {
                 StartWave(Generate((_waveNumber + 1) * _baseWaveValue));
+                _waveNumber++;
+            }
         }
     }
 
