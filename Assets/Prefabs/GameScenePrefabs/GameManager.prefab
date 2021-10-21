@@ -96,9 +96,15 @@ MonoBehaviour:
   _waveInterval: 10
   _firstWaveDelay: 1
   _enemyPrefabs:
-  - {fileID: 4889144641503594331, guid: 11e2bf72d585b9e4082e0f9d473cc6d3, type: 3}
-  - {fileID: 2446718109540386351, guid: b5dde2c5895b3c54daa912ac01bb7b86, type: 3}
-  - {fileID: 5219126532061713521, guid: f2649e5ce9ebbbf4ab465eecdd34efee, type: 3}
-  - {fileID: 5770893382651485771, guid: 42e83be169110864386500ccfa51a194, type: 3}
   - {fileID: 7182913592337825528, guid: b917afa428f442045942b841310efd8d, type: 3}
+  - {fileID: 4889144641503594331, guid: 11e2bf72d585b9e4082e0f9d473cc6d3, type: 3}
+  - {fileID: 4889144641503594331, guid: c6968ec0e74f4384dadb84b751255234, type: 3}
+  - {fileID: 5219126532061713521, guid: f2649e5ce9ebbbf4ab465eecdd34efee, type: 3}
+  - {fileID: 2446718109540386351, guid: 2f89a49fc61a56f4aa455089dcdb8e75, type: 3}
+  - {fileID: 5770893382651485771, guid: d9b5be1c32f1d0747aa77454a74265ac, type: 3}
+  - {fileID: 5770893382651485771, guid: 42e83be169110864386500ccfa51a194, type: 3}
+  - {fileID: 7182913592337825528, guid: 9a25c13e5482415408d8972fda7fe222, type: 3}
+  - {fileID: 7182913592337825528, guid: 8da93edc81486ec4180d5fba4165434f, type: 3}
+  - {fileID: 7182913592337825528, guid: d8a1746bb23714348b603b9af7232d0d, type: 3}
   - {fileID: 2446718109540386351, guid: b5dde2c5895b3c54daa912ac01bb7b86, type: 3}
+  - {fileID: 7182913592337825528, guid: 8b57422f5f660d64bbe7faa2539951f9, type: 3}
