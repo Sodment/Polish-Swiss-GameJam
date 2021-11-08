@@ -33,7 +33,7 @@ public class TrashDealDamage : MonoBehaviour
     }
     private void EnteredDefendingZone()
     {
-        trashMovement.stopMovement();
+        trashMovement.StopMovement();
         GameManager.Instance.baseHitPoints = Mathf.Max(0f, GameManager.Instance.baseHitPoints - 1f);
         if(GameManager.Instance.baseHitPoints <= 0f)
         {

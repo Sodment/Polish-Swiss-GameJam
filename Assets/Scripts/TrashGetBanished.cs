@@ -6,7 +6,7 @@ public class TrashGetBanished : MonoBehaviour
 {
     public void getBannished()
     {
-        gameObject.GetComponent<TrashMovement>().stopMovement();
+        gameObject.GetComponent<TrashMovement>().StopMovement();
         Debug.Log("im banished and playing awersome visual effect");
         Destroy(gameObject);
     }
