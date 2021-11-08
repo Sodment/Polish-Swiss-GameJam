@@ -32,11 +32,13 @@ public class Enemy : MonoBehaviour
     {
         var newHealth = Mathf.Max(0f, _health - damage);
         _health = newHealth;
-        if(_health == 0)
+
+        if(IsDead)
         {
             GetKilled(source);
         }
-        return newHealth <= 0f;
+
+        return IsDead;
     }
 
     public void GetKilled(Tower source)
@@ -48,8 +50,10 @@ public class Enemy : MonoBehaviour
 
     public void Die(Transform source)
     {
+        _health = 0;
+
         TrashMovement movement = gameObject.GetComponent<TrashMovement>();
-        movement.stopMovement();
-        movement.lastMovement(source.transform);
+        movement.StopMovement();
+        movement.LastMove(source.transform);
     }
 }
