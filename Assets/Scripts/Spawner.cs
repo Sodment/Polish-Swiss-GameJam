@@ -21,6 +21,7 @@ public class Spawner : MonoBehaviour
     private bool _isWaveActive;
     private int _waveNumber;
 
+    [field: Space, SerializeField]
     public List<Enemy> AliveEnemies { get; private set; } = new List<Enemy>();
 
     public int WaveNumber => _waveNumber;
@@ -65,7 +66,9 @@ public class Spawner : MonoBehaviour
         {
             _isWaveActive = false;
             _waveTimer = _waveInterval;
-            if(NextWave != null) NextWave.SetActive(true);
+
+            if (NextWave != null)
+                NextWave.SetActive(true);
         }
 
         if (!_isWaveActive)
@@ -135,6 +138,9 @@ public class Spawner : MonoBehaviour
 
     public void StartWave(List<Enemy> enemies)
     {
+        if (NextWave != null)
+            NextWave.SetActive(false);
+
         _isWaveActive = true;
 
         for (int i = 0; i < enemies.Count; i++)
