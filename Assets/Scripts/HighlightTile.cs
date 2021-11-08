@@ -3,13 +3,15 @@ using UnityEngine.Tilemaps;
 
 public class HighlightTile : MonoBehaviour
 {
-    private Grid grid;
+    public bool ShowHighligther;
+
     [SerializeField] private Tilemap highlightTilemap = null;
     [SerializeField] private Tile highlightTile = null;
+
+    private Grid grid;
     private Vector3Int previousMousePos = new Vector3Int();
-    public bool showHighligther = true;
-    // Start is called before the first frame update
-    void Start()
+
+    private void Start()
     {
         grid = gameObject.GetComponent<Grid>();
     }
@@ -17,7 +19,7 @@ public class HighlightTile : MonoBehaviour
     private void Update()
     {
         Vector3Int mousePos = GetMousePosition();
-        if (!mousePos.Equals(previousMousePos) && !showHighligther)
+        if (!mousePos.Equals(previousMousePos) && !ShowHighligther)
         {
             highlightTilemap.SetTile(previousMousePos, null);
             highlightTilemap.SetTile(mousePos, highlightTile);
@@ -25,12 +27,12 @@ public class HighlightTile : MonoBehaviour
         }
 
         if (Input.GetMouseButtonDown(0))
-        {
-            showHighligther = !showHighligther;
-        }
+            ShowHighligther = !ShowHighligther;
+        else if (Input.GetMouseButtonUp(1) || Input.GetKeyDown(KeyCode.Escape))
+            ShowHighligther = false;
     }
 
-    Vector3Int GetMousePosition()
+    private Vector3Int GetMousePosition()
     {
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseWorldPos.z = 0;

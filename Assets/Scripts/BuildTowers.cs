@@ -13,16 +13,17 @@ public class BuildTowers : MonoBehaviour
         takenTiles = FindObjectOfType<PathGenerator>().Path;
     }
 
-
     private void Update()
     {
+        if (Input.GetMouseButtonDown(0))
         {
-            if(Input.GetMouseButtonDown(0))
-            {
-                Vector3Int select = selectedTile.GetSelectedTile();
-                Vector3 tileCenter = new Vector3(select.x + 0.5f, select.y + 0.5f);
-                Buttons.transform.position = Camera.main.WorldToScreenPoint(tileCenter);
-            }
+            Vector3Int select = selectedTile.GetSelectedTile();
+            Vector3 tileCenter = new Vector3(select.x + 0.5f, select.y + 0.5f);
+            Buttons.transform.position = Camera.main.WorldToScreenPoint(tileCenter);
+        }
+        else if (Input.GetMouseButtonUp(1) || Input.GetKeyDown(KeyCode.Escape))
+        {
+            HideButtons();
         }
     }
 
@@ -33,16 +34,16 @@ public class BuildTowers : MonoBehaviour
 
     public void BuildTower(int index)
     {
-
         Vector3Int selected = selectedTile.GetSelectedTile();
         Debug.Log(selected.ToString());
-        if(takenTiles.Contains(selected))
+
+        if (takenTiles.Contains(selected))
         {
             Debug.Log("Its TAKEN");
         }
-        else if(GameManager.Instance.money >= towers[index].GetComponent<Tower>().costOfBuilding)
+        else if (GameManager.Instance.money >= towers[index].GetComponent<Tower>().costOfBuilding)
         {
-            Instantiate(towers[index], new Vector3(selected.x+0.5f, selected.y+0.5f, 0), Quaternion.identity);
+            Instantiate(towers[index], new Vector3(selected.x + 0.5f, selected.y + 0.5f, 0), Quaternion.identity);
             takenTiles.Add(selected);
             GameManager.Instance.money -= towers[index].GetComponent<Tower>().costOfBuilding;
         }
