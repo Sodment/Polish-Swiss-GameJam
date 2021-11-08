@@ -15,7 +15,7 @@ public class SelectedTile : MonoBehaviour
     private void Update()
     {
         Vector3Int mousePosistion = GetMousePosition();
-        if (!EventSystem.current.IsPointerOverGameObject() && Input.GetMouseButtonDown(0))
+        if (!EventSystem.current.IsPointerOverGameObject() && Input.GetMouseButtonUp(0))
         {
             isSelected = !isSelected;
             if(isSelected)
@@ -37,7 +37,7 @@ public class SelectedTile : MonoBehaviour
     {
         Vector3Int mousePosistion = GetMousePosition();
 
-        if (!EventSystem.current.IsPointerOverGameObject())
+        if (!BuildTowers.IsOverSelectionWheel() && !BuildTowers.IsOverNextWaveButton() && !PauseGame.IsPaused)
         {
             SelectedPosition = mousePosistion;
             Debug.Log("Selected Pos:" + SelectedPosition.ToString() + isSelected.ToString());

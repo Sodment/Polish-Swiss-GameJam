@@ -27,7 +27,7 @@ public class HighlightTile : MonoBehaviour
             previousMousePos = mousePos;
         }
 
-        if (!PauseGame.IsPaused && Input.GetMouseButtonDown(0))
+        if (!BuildTowers.IsOverSelectionWheel() && !BuildTowers.IsOverNextWaveButton() && !PauseGame.IsPaused && Input.GetMouseButtonDown(0))
             ShowHighligther = !ShowHighligther;
         if (Input.GetMouseButtonUp(1) || Input.GetKeyDown(KeyCode.Escape))
             ShowHighligther = false;
