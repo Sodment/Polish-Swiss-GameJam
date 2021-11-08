@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour
     [Space]
     [SerializeField] private float _health;
 
+    private LevelManager _level;
+
     public EnemyType Type => _type;
 
     public float Value => _value;
@@ -21,11 +23,11 @@ public class Enemy : MonoBehaviour
 
     public bool IsDead => _health <= 0f;
 
-    public LevelManager level;
     private void Start()
     {
-        level = FindObjectOfType<LevelManager>();
+        _level = FindObjectOfType<LevelManager>();
     }
+
     public bool AddDamage(float damage, Tower source)
     {
         var newHealth = Mathf.Max(0f, _health - damage);
@@ -36,18 +38,18 @@ public class Enemy : MonoBehaviour
         }
         return newHealth <= 0f;
     }
+
     public void GetKilled(Tower source)
     {
         GameManager.Instance.money += Value * source.moneyGain;
-        level.notificater.MakeNotificationMoney(transform.position, Value * source.moneyGain);
+        _level.notificater.MakeNotificationMoney(transform.position, Value * source.moneyGain);
         Die(source.transform);
     }
+
     public void Die(Transform source)
     {
         TrashMovement movement = gameObject.GetComponent<TrashMovement>();
         movement.stopMovement();
         movement.lastMovement(source.transform);
     }
-
-    
 }

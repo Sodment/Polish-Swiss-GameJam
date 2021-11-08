@@ -48,10 +48,12 @@ public class TrashMovement : MonoBehaviour
             }
         }
     }
+
     public void stopMovement()
     {
         isMoving = false;
     }
+
 	private void getPath()
 	{
 		PathGenerator pathGenerator = FindObjectOfType<PathGenerator>();
@@ -61,6 +63,7 @@ public class TrashMovement : MonoBehaviour
 			path.Add(new Vector2(vec.x + 0.5f, vec.y + 0.5f));
 		}
 	}
+
     public void lastMovement(Transform destination)
     {
         if(isMoving)
@@ -68,17 +71,20 @@ public class TrashMovement : MonoBehaviour
             Debug.LogWarning("trash is still alive");
             stopMovement();
         }
+
         StartCoroutine(lastMove(destination));
     }
+
     private IEnumerator lastMove(Transform destination)
     {
         while(Vector2.Distance(destination.position, transform.position) > threshold)
         {
             Vector3 dir = new Vector3(destination.position.x - transform.position.x, destination.position.y - transform.position.y, 0f);
             transform.position += dir * deathSpeed * Time.deltaTime;
-            transform.localScale = new Vector3(transform.localScale.x * 0.97f, transform.localScale.y * 0.97f, transform.localScale.z * 0.97f) ;
+            transform.localScale = transform.localScale * 0.97f;
             yield return null;
         }
+
         gameObject.SetActive(false);
     }
 }
