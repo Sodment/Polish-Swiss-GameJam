@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class BuildTowers : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class BuildTowers : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (!PauseGame.IsPaused && Input.GetMouseButtonDown(0))
         {
             Vector3Int select = selectedTile.GetSelectedTile();
             Vector3 tileCenter = new Vector3(select.x + 0.5f, select.y + 0.5f);
