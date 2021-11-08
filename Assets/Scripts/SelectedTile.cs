@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class SelectedTile : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class SelectedTile : MonoBehaviour
     private void Update()
     {
         Vector3Int mousePosistion = GetMousePosition();
-        if (Input.GetMouseButtonDown(0))
+        if (!EventSystem.current.IsPointerOverGameObject() && Input.GetMouseButtonDown(0))
         {
             isSelected = !isSelected;
             if(isSelected)
@@ -34,6 +35,14 @@ public class SelectedTile : MonoBehaviour
 
     public Vector3Int GetSelectedTile()
     {
+        Vector3Int mousePosistion = GetMousePosition();
+
+        if (!EventSystem.current.IsPointerOverGameObject())
+        {
+            SelectedPosition = mousePosistion;
+            Debug.Log("Selected Pos:" + SelectedPosition.ToString() + isSelected.ToString());
+        }
+
         return SelectedPosition;
     }
 
