@@ -28,7 +28,7 @@ public class HighlightTile : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
             ShowHighligther = !ShowHighligther;
-        else if (Input.GetMouseButtonUp(1) || Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetMouseButtonUp(1) || Input.GetKeyDown(KeyCode.Escape))
             ShowHighligther = false;
     }
 

@@ -21,7 +21,7 @@ public class BuildTowers : MonoBehaviour
             Vector3 tileCenter = new Vector3(select.x + 0.5f, select.y + 0.5f);
             Buttons.transform.position = Camera.main.WorldToScreenPoint(tileCenter);
         }
-        else if (Input.GetMouseButtonUp(1) || Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetMouseButtonUp(1) || Input.GetKeyDown(KeyCode.Escape))
         {
             HideButtons();
         }
